@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Picture-in-Picture</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- piptitle -->
+    <a class="Home" href="./index.html"><i class="fas fa-chevron-circle-left"></i></i>Home</a>
+    <h1 class="title">Picture In Picture</h1>
+    
     <!-- video -->
     <video id="video" controls height="360px" width="640px" hidden></video>
     <!-- button -->
+    
     <div class="button_container">
-         <a href="./index.html">Home</a>
-        <button id="sharebutton">SHARE</button>
-        <button id="startbutton">START</button>
-        <button id="stopbutton">STOP</button>
+        <button id="sharebutton"><i class="fas fa-share"></i>SHARE</button>
+        <button id="startbutton"><i class="fas fa-play-circle"></i>START</button>
+        <button id="stopbutton"><i class="fas fa-stop-circle"></i>STOP</button>
     </div>
     <!-- Script -->
     <script src="pipscript.js"></script>
