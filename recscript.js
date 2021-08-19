@@ -4,8 +4,7 @@ let start = document.getElementById("recordbutton"),
 
 start.addEventListener("click", async function () {
   let stream = await recordScreen();
-  let mimeType = "video/mp4";
-  mediaRecorder = createRecorder(stream, mimeType);
+  mediaRecorder = createRecorder(stream);
 });
 
 stop.addEventListener("click", function () {
@@ -16,11 +15,7 @@ stop.addEventListener("click", function () {
 async function recordScreen() {
   try{
   return await navigator.mediaDevices.getDisplayMedia({
-    audio: {
-        echoCancellation: true,
-        noiseSuppression: true,
-        sampleRate: 44100,
-      },
+    audio: true,
     video: { mediaSource: "screen" },
   });
 }catch(err)
@@ -30,7 +25,7 @@ async function recordScreen() {
 }
 }
 
-function createRecorder(stream, mimeType) {
+function createRecorder(stream) {
   // the stream data is stored in this array
   let recordings = [];
 
@@ -56,7 +51,7 @@ function saveFile(recordings) {
   let filename = window.prompt("Enter file name"),
     downloadLink = document.createElement("a");
   downloadLink.href = URL.createObjectURL(blob);
-  downloadLink.download = `${filename}.webm`;
+  downloadLink.download = `${filename}.mp4`;
 
   document.body.appendChild(downloadLink);
   downloadLink.click();

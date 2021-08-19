@@ -93,6 +93,15 @@ h1{
   margin: 15px;
   border: none;
 }
+#screenrecord:hover,
+#pip:hover,
+#sharebutton:hover,
+#startbutton:hover,
+#recordbutton:hover,
+#stopbutton:hover,
+#stoprecbutton:hover{
+  filter: brightness(110%);
+}
 
 .fas
 {
@@ -106,7 +115,7 @@ h1{
     text-align: center;
     word-spacing: 0px;
     white-space: nowrap;
-    background-color: #000000;
+    background-color: #242424;
     background-position: 0% 0%;
     color: #FFFFFF;
     height: 56px;
@@ -121,25 +130,56 @@ h1{
     border: none;
 
 }
-.footer {
+.Home:hover {
+  background-color: #333333;
+}
+.footer , .instfooter {
   position: fixed;
   left: 0;
   bottom: 0;
+  padding: 5px;
   width: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(120, 90, 255);
   color: white;
   text-align: center;
+  text-decoration: dashed;
 }
 
 .title
 {
   margin-top: 50px;
   text-align: center;
-  color: rgb(105, 105, 105);
+  color: rgb(75, 75, 75);
 }
 
 .hometitle {
   margin-top: 150px;
   text-align: center;
-  color: rgb(105, 105, 105);
+  color: rgb(75, 75, 75);
+}
+
+#message{
+  font-size: small;
+  display: none;
+  text-align: center;
+  margin-top: 50%;
+  padding:35px;
+  color:black;
+  border-radius: 12px;
+}
+
+
+@media only screen and (max-width: 740px) {
+  #message{
+    display: block;
+  }
+
+  body
+  {
+    background-color:rgb(210, 217, 224);
+  }
+  .hometitle  ,.home_container , .video  , .button_container , .title ,.Home ,.instfooter
+  {
+    display:none;
+  }
 }
