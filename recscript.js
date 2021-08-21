@@ -8,8 +8,10 @@ start.addEventListener("click", async function () {
 });
 
 stop.addEventListener("click", function () {
-  mediaRecorder.stop();
-  location.reload();
+  if (mediaRecorder) {
+     mediaRecorder.stop();
+     location.reload();
+  }
 });
 
 async function recordScreen() {
@@ -52,9 +54,9 @@ function saveFile(recordings) {
     downloadLink = document.createElement("a");
   downloadLink.href = URL.createObjectURL(blob);
   downloadLink.download = `${filename}.mp4`;
-
+if(filename){
   document.body.appendChild(downloadLink);
   downloadLink.click();
   URL.revokeObjectURL(blob); // clear from memory
-  document.body.removeChild(downloadLink);
+  document.body.removeChild(downloadLink);}
 }
